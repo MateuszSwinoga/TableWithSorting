@@ -1,26 +1,36 @@
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int element1, element2, element3, element4, element5, select;
+        System.out.println("Enter five numbers for table(separated by enter)");
 
-        int[] table = new int[]{2,5,4,3,1};
+        element1 = scanner.nextInt();
+        element2 = scanner.nextInt();
+        element3 = scanner.nextInt();
+        element4 = scanner.nextInt();
+        element5 = scanner.nextInt();
 
-        for (int i=0; i< table.length; i++){
-            System.out.println("Table before sorting: " + table[i]);
+        int[] table = {element1, element2, element3, element4, element5};
+        System.out.println("Display table:\n1.added sequence\n2.ascending\n3.decreasing");
+        select = scanner.nextInt();
+        switch (select) {
+            case 1:
+                System.out.println("Table before sorting: " + Arrays.toString(table));
+                break;
+
+            case 2:
+
+                    Arrays.sort(table);
+                    System.out.println("Table after soring - ascending: " + Arrays.toString(table));
+
+                break;
+
+
 
         }
-        for (int i=0; i< table.length; i++) {
-            Arrays.sort(table);
-
-            System.out.println("Table after soring - ascending: " + table[i]);
-        }
-        for (int i=0; i< table.length; i++) {
-            Arrays.sort(table, (x,y) -> y - x);
-            System.out.println("Table after sorting - descending: " + table[i]);
-
-        }
-
 
     }
 }
