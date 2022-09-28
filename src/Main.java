@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -27,6 +28,12 @@ public class Main {
                     System.out.println("Table after soring - ascending: " + Arrays.toString(table));
 
                 break;
+
+            case 3:
+
+                Arrays.sort(table, (x,y) -> {
+                    return x-y;
+                });
 
 
 
