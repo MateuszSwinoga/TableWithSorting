@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
         element4 = scanner.nextInt();
         element5 = scanner.nextInt();
 
-        int[] table = {element1, element2, element3, element4, element5};
+        Integer[] table = {element1, element2, element3, element4, element5};
         System.out.println("Display table:\n1.added sequence\n2.ascending\n3.decreasing");
         select = scanner.nextInt();
         switch (select) {
@@ -30,10 +30,9 @@ public class Main {
                 break;
 
             case 3:
-
-                Arrays.sort(table, (x,y) -> {
-                    return x-y;
-                });
+                Arrays.sort(table, (x,y) -> y-x); // or can be "Arrays.sort(table, Collections.reverseOrder());", but for working proces table must be Integer not only int
+                System.out.println("Table after soring - decreasing: " + Arrays.toString(table));
+                break;
 
 
 
